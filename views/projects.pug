@@ -1,0 +1,12 @@
+extends layout
+
+block content
+    h1 Projects
+    hr
+    .row
+        for project in projects
+            .col-md-6
+                h2 #{project.title}
+                p #{project.description}
+                p
+                    a.btn.btn-raised(href='#(project.url)', role='button') View details »
