@@ -8,6 +8,7 @@ const _ = require('lodash');
 const validator = require('validator');
 const mailChecker = require('mailchecker');
 const User = require('../models/User');
+const winston = require('../config/winston');
 
 const randomBytesAsync = promisify(crypto.randomBytes);
 
@@ -76,7 +77,7 @@ exports.postLogin = (req, res, next) => {
 exports.logout = (req, res) => {
   req.logout();
   req.session.destroy((err) => {
-    if (err) console.log('Error : Failed to destroy the session during logout.', err);
+    if (err) winston.info('Error : Failed to destroy the session during logout.', err);
     req.user = null;
     res.redirect('/');
   });
@@ -401,7 +402,7 @@ exports.getVerifyEmailToken = (req, res, next) => {
         return res.redirect('/account');
       })
       .catch((error) => {
-        console.log('Error saving the user profile to the database after email verification', error);
+        winston.info('Error saving the user profile to the database after email verification', error);
         req.flash('error', {
           msg: 'There was an error when updating your profile.  Please try again later.'
         });
@@ -470,7 +471,7 @@ exports.getVerifyEmail = (req, res, next) => {
       })
       .catch((err) => {
         if (err.message === 'self signed certificate in certificate chain') {
-          console.log('WARNING: Self signed certificate in certificate chain. Retrying with the self signed certificate. Use a valid certificate if in production.');
+          winston.info('WARNING: Self signed certificate in certificate chain. Retrying with the self signed certificate. Use a valid certificate if in production.');
           transporter = nodemailer.createTransport({
             service: 'SendGrid',
             auth: {
@@ -488,7 +489,7 @@ exports.getVerifyEmail = (req, res, next) => {
               });
             });
         }
-        console.log('ERROR: Could not send verifyEmail email after security downgrade.\n', err);
+        winston.info('ERROR: Could not send verifyEmail email after security downgrade.\n', err);
         req.flash('errors', {
           msg: 'Error sending the email verification message. Please try again shortly.'
         });
@@ -583,7 +584,7 @@ exports.postReset = (req, res, next) => {
       })
       .catch((err) => {
         if (err.message === 'self signed certificate in certificate chain') {
-          console.log('WARNING: Self signed certificate in certificate chain. Retrying with the self signed certificate. Use a valid certificate if in production.');
+          winston.info('WARNING: Self signed certificate in certificate chain. Retrying with the self signed certificate. Use a valid certificate if in production.');
           transporter = nodemailer.createTransport({
             service: 'SendGrid',
             auth: {
@@ -601,7 +602,7 @@ exports.postReset = (req, res, next) => {
               });
             });
         }
-        console.log('ERROR: Could not send password reset confirmation email after security downgrade.\n', err);
+        winston.info('ERROR: Could not send password reset confirmation email after security downgrade.\n', err);
         req.flash('warning', {
           msg: 'Your password has been changed, however we were unable to send you a confirmation email. We will be looking into it shortly.'
         });
@@ -700,7 +701,7 @@ exports.postForgot = (req, res, next) => {
       })
       .catch((err) => {
         if (err.message === 'self signed certificate in certificate chain') {
-          console.log('WARNING: Self signed certificate in certificate chain. Retrying with the self signed certificate. Use a valid certificate if in production.');
+          winston.info('WARNING: Self signed certificate in certificate chain. Retrying with the self signed certificate. Use a valid certificate if in production.');
           transporter = nodemailer.createTransport({
             service: 'SendGrid',
             auth: {
@@ -718,7 +719,7 @@ exports.postForgot = (req, res, next) => {
               });
             });
         }
-        console.log('ERROR: Could not send forgot password email after security downgrade.\n', err);
+        winston.info('ERROR: Could not send forgot password email after security downgrade.\n', err);
         req.flash('errors', {
           msg: 'Error sending the password reset message. Please try again shortly.'
         });

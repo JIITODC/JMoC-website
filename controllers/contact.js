@@ -1,6 +1,6 @@
 const validator = require('validator');
 const nodemailer = require('nodemailer');
-
+const winston = require('../config/winston');
 /**
  * GET /contact
  * Contact form page.
@@ -62,7 +62,7 @@ exports.postContact = (req, res) => {
     })
     .catch((err) => {
       if (err.message === 'self signed certificate in certificate chain') {
-        console.log('WARNING: Self signed certificate in certificate chain. Retrying with the self signed certificate. Use a valid certificate if in production.');
+        winston.info('WARNING: Self signed certificate in certificate chain. Retrying with the self signed certificate. Use a valid certificate if in production.');
         transporter = nodemailer.createTransport({
           service: 'SendGrid',
           auth: {
@@ -75,7 +75,7 @@ exports.postContact = (req, res) => {
         });
         return transporter.sendMail(mailOptions);
       }
-      console.log('ERROR: Could not send contact email after security downgrade.\n', err);
+      winston.info('ERROR: Could not send contact email after security downgrade.\n', err);
       req.flash('errors', { msg: 'Error sending the message. Please try again shortly.' });
       return false;
     })
@@ -86,7 +86,7 @@ exports.postContact = (req, res) => {
       }
     })
     .catch((err) => {
-      console.log('ERROR: Could not send contact email.\n', err);
+      winston.info('ERROR: Could not send contact email.\n', err);
       req.flash('errors', { msg: 'Error sending the message. Please try again shortly.' });
       return res.redirect('/contact');
     });
