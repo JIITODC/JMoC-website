@@ -15,7 +15,8 @@ const path = require('path');
 const mongoose = require('mongoose');
 const passport = require('passport');
 const sass = require('node-sass-middleware');
-
+const helmet = require('helmet');
+const winston = require('./config/winston');
 
 /**
  * Load environment variables from .env file, where API keys and passwords are configured.
@@ -52,7 +53,7 @@ mongoose.set('useUnifiedTopology', true);
 mongoose.connect(process.env.MONGODB_URI);
 mongoose.connection.on('error', (err) => {
   console.error(err);
-  console.log('%s MongoDB connection error. Please make sure MongoDB is running.');
+  winston.info('%s MongoDB connection error. Please make sure MongoDB is running.');
   process.exit();
 });
 
@@ -68,7 +69,7 @@ app.use(sass({
   src: path.join(__dirname, 'public'),
   dest: path.join(__dirname, 'public')
 }));
-app.use(logger('dev'));
+app.use(logger('combined', { stream: winston.stream }));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({
   extended: true
@@ -96,6 +97,7 @@ app.use((req, res, next) => {
     lusca.csrf()(req, res, next);
   }
 });
+app.use(helmet());
 app.use(lusca.xframe('SAMEORIGIN'));
 app.use(lusca.xssProtection(true));
 app.disable('x-powered-by');
@@ -182,7 +184,7 @@ if (process.env.NODE_ENV === 'development') {
   app.use(errorHandler());
 } else {
   app.use((err, req, res, next) => {
-    console.error(err);
+    winston.error(err);
     res.status(500).send('Server Error');
   });
 }
@@ -191,8 +193,8 @@ if (process.env.NODE_ENV === 'development') {
  * Start Express server.
  */
 app.listen(app.get('port'), () => {
-  console.log('%s App is running at http://localhost:%d in %s mode', app.get('port'), app.get('env'));
-  console.log('  Press CTRL-C to stop\n');
+  winston.info('%s App is running at http://localhost:%d in %s mode', app.get('port'), app.get('env'));
+  winston.info('  Press CTRL-C to stop\n');
 });
 
 module.exports = app;

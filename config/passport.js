@@ -1,4 +1,5 @@
 const passport = require('passport');
+const winston = require('./winston');
 const refresh = require('passport-oauth2-refresh');
 const { Strategy: LocalStrategy } = require('passport-local');
 const { Strategy: GitHubStrategy } = require('passport-github');
@@ -142,7 +143,7 @@ exports.isAuthorized = (req, res, next) => {
               req.user = user;
               user.markModified('tokens');
               user.save((err) => {
-                if (err) console.log(err);
+                if (err) winston.info(err);
                 next();
               });
             });
