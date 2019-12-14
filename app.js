@@ -30,8 +30,6 @@ dotenv.config({
  */
 const homeController = require('./controllers/home');
 const userController = require('./controllers/user');
-const aboutController = require('./controllers/about');
-const leaderboardController = require('./controllers/leaderboard');
 const contactController = require('./controllers/contact');
 const projectController = require('./controllers/projects');
 
@@ -157,10 +155,6 @@ app.post('/account/profile', passportConfig.isAuthenticated, userController.post
 app.post('/account/password', passportConfig.isAuthenticated, userController.postUpdatePassword);
 app.post('/account/delete', passportConfig.isAuthenticated, userController.postDeleteAccount);
 app.get('/account/unlink/:provider', passportConfig.isAuthenticated, userController.getOauthUnlink);
-app.get('/about', aboutController.getAbout);
-app.post('/about', aboutController.postAbout);
-app.get('/leaderboard', leaderboardController.getLeaderboard);
-app.post('/leaderboard', leaderboardController.postLeaderboard);
 
 app.get('/project', projectController.getAllProjects);
 app.get('/project/new', projectController.getNewProject);
