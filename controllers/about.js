@@ -1,5 +1,5 @@
-exports.index = (req, res) => {
-    res.render('about', {
-        title: 'About'
-    });
+exports.getAbout = (req, res) => {
+  res.render('about', {
+    title: 'About'
+  });
 };

@@ -1,5 +1,5 @@
-exports.index = (req, res) => {
-    res.render('leaderboard', {
-        title: 'Leaderboard'
-    });
+exports.getLeaderboard = (req, res) => {
+  res.render('leaderboard', {
+    title: 'Leaderboard'
+  });
 };

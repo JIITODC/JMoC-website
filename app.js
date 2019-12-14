@@ -158,9 +158,7 @@ app.post('/account/password', passportConfig.isAuthenticated, userController.pos
 app.post('/account/delete', passportConfig.isAuthenticated, userController.postDeleteAccount);
 app.get('/account/unlink/:provider', passportConfig.isAuthenticated, userController.getOauthUnlink);
 app.get('/about', aboutController.getAbout);
-app.post('/about', aboutController.postAbout);
 app.get('/leaderboard', leaderboardController.getLeaderboard);
-app.post('/leaderboard', leaderboardController.postLeaderboard);
 
 app.get('/project', projectController.getAllProjects);
 app.get('/project/new', projectController.getNewProject);
