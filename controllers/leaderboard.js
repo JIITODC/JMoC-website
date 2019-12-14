@@ -1,5 +1,5 @@
 exports.getLeaderboard = (req, res) => {
-    res.render('leaderboard', {
-        title: 'Leaderboard'
-    });
+  res.render('leaderboard', {
+    title: 'Leaderboard'
+  });
 };
