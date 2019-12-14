@@ -1,4 +1,4 @@
-exports.index = (req, res) => {
+exports.getAbout = (req, res) => {
     res.render('about', {
         title: 'About'
     });
