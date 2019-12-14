@@ -10,16 +10,18 @@
       ul.nav.navbar-nav
         li.nav-item(class=(title === 'Home') ? 'active' : undefined)
           a.nav-link(href='/') Home
+        li.nav-item(class=(title === 'About') ? 'active' : undefined)
+          a.nav-link(href='/about') About
         li.nav-item(class=(title === 'Projects') ? 'active' : undefined)
           a.nav-link(href='/project') Projects
+        li.nav-item(class=(title === 'Leaderboard') ? 'active' : undefined)
+          a.nav-link(href='/leaderboard') Leaderboard
         li.nav-item(class=(title === 'Contact') ? 'active' : undefined)
           a.nav-link(href='/contact') Contact
       ul.nav.navbar-nav.ml-auto
         if !user
           li.nav-item(class=(title === 'Login') ? 'active' : undefined)
             a.nav-link(href='/login') Login
-          li.nav-item(class=(title === 'Create Account') ? 'active' : undefined)
-            a.nav-link(href='/signup') Create Account
         else
           li.dropdown(class=(title === 'Account Management') ? 'active' : undefined).nav-item
             a.dropdown-toggle.nav-link(href='#', data-toggle='dropdown')
