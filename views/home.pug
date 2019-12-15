@@ -1,53 +1,68 @@
 extends layout
-
-block content
+block home
   #jmoc
-  h1.jumbo-head &lt; JIIT MONTH OF CODE / &gt;
-  .jumbo-button
-    button.slide(onclick="window.location.href = '/signup';") MENTOR REGISTRATION  
-    button.slide(onclick="window.location.href = '/signup';") STUDENT REGISTRATION
-  br 
-  br
-  br
-  br
-  br
-  br
-  .timeline 
-    center Timeline
-    br
+    svg(viewbox='0 0 960 300')
+      symbol#s-text
+        text(text-anchor='middle' x='50%' y='80%') &lt; JMOC / &gt;
+      g.g-ants
+        use.text-copy(xlink:href='#s-text')
+        use.text-copy(xlink:href='#s-text')
+        use.text-copy(xlink:href='#s-text')
+        use.text-copy(xlink:href='#s-text')
+        use.text-copy(xlink:href='#s-text')
+    h1.jumbo-head &lt; JIIT MONTH OF CONTRIBUTIONS / &gt;
+    .jumbo-button
+      button.slide MENTOR REGISTRATION
+      button.slide STUDENT REGISTRATION
+  #box
+    #about
+      h1 About JMOC
+      |                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+      |                  Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+      |                  Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+      |                  Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+    #why
+      h1 How it works ?
+      |                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+      |                 Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+      |                 Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+      |                 Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+    #docs
+      h1 Resources
+      .box2
+        button Student Manual
+        button Mentor Manual
+  .timeline
+    h1 Timeline
     section#timeline
       article
         .inner
           span.circle
           h2 The Title
           p
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean quis rutrum nunc, eget dictum massa. Nam
-            faucibus felis nec augue adipiscing, eget commodo libero mattis.
+            | Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean quis rutrum nunc, eget dictum massa. Nam faucibus felis nec augue adipiscing, eget commodo libero mattis.
       article
         .inner
           span.circle
           h2 The Title
           p
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean quis rutrum nunc, eget dictum massa. Nam
-            faucibus felis nec augue adipiscing, eget commodo libero mattis.
+            | Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean quis rutrum nunc, eget dictum massa. Nam faucibus felis nec augue adipiscing, eget commodo libero mattis.
       article
         .inner
           span.circle
           h2 The Title
           p
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean quis rutrum nunc, eget dictum massa. Nam
-            faucibus felis nec augue adipiscing, eget commodo libero mattis.
+            | Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean quis rutrum nunc, eget dictum massa. Nam faucibus felis nec augue adipiscing, eget commodo libero mattis.
       article
         .inner
           span.circle
           h2 The Title
           p
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean quis rutrum nunc, eget dictum massa. Nam
-            faucibus felis nec augue adipiscing, eget commodo libero mattis.
+            | Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean quis rutrum nunc, eget dictum massa. Nam faucibus felis nec augue adipiscing, eget commodo libero mattis.
       article
         .inner
           span.circle
           h2 The Title
           p
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean quis rutrum nunc, eget dictum massa. Nam
-            faucibus felis nec augue adipiscing, eget commodo libero mattis.
+            | Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean quis rutrum nunc, eget dictum massa. Nam faucibus felis nec augue adipiscing, eget commodo libero mattis.
+
