@@ -10,7 +10,11 @@ html, body{
   color:#fff;
   overflow-x: hidden;
 }
-
+footer{
+  font-size: 16px;
+  line-height: 1.5;
+  font-family: Arial, Helvetica, sans-serif;
+}
 #jmoc{
   background: #1d1d27;
   margin-top:-2.9%;
@@ -22,6 +26,9 @@ body {
   font:normal 75% Arial, Helvetica, sans-serif;
 }
 
+.table,form{
+  font-size: 15px;
+}
 
 ul {
   margin: 0;
@@ -39,41 +46,6 @@ a {
 a {
 	text-decoration: none;
 }
-
-
-
-.logo {
-	margin: 0;
-	font-size: 1.45em;
-}
-
-.main-nav {
-	margin: 5px 25px;
-
-}
-.logo a,
-.main-nav a {
-	padding: 10px 15px;
-  margin: 0px 10px;
-	text-transform: uppercase;
-	text-align: center;
-	display: block;
-}
-
-.main-nav a {
-	color: #fff;
-	font-size: .99em;
-  border-bottom:2px solid #1d1d27;
-  margin:0 10px;
-}
-
-.main-nav a:hover {
-	color: #fff;
-  border-bottom: 2px solid white;
-  
-}
-
-
 .jumbo-head{
   display: block;
   font: 3em 'Montserrat';
@@ -152,15 +124,6 @@ svg {
   color:black;
   background-color: snow;
 }
-
-.arrow{
-    display: block;
-    margin:2em auto ;
-    
-    animation: bounce 1.5s infinite;
-    
-}
-
 /*content*/
 
 #box{
@@ -476,7 +439,7 @@ div.timeline h1{
   
 }
 
-@media ( max-width: 769px) {
+@media  (max-width: 769px) {
  
   svg{
     font: 15em 'Montserrat';
@@ -570,3 +533,11 @@ div.timeline h1{
     
 }
 
+@media (max-width: 481px){
+  .box2{
+    margin:2em 20%;
+    display:flex;
+    flex-direction: column;
+    justify-content: space-around;
+  } 
+}
