@@ -161,8 +161,8 @@ app.get('/about', aboutController.getAbout);
 app.get('/leaderboard', leaderboardController.getLeaderboard);
 
 app.get('/project', projectController.getAllProjects);
-app.get('/project/new', projectController.getNewProject);
-app.post('/project/new', projectController.postNewProject);
+app.get('/project/new', passportConfig.isAuthenticated, projectController.getNewProject);
+app.post('/project/new', passportConfig.isAuthenticated, projectController.postNewProject);
 
 /**
  * OAuth authentication routes. (Sign in)
