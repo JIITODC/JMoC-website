@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="75pt" height="75pt" viewBox="0 0 75 75" version="1.1">
-<g id="surface1">
-<path style="fill-rule:nonzero;fill:rgb(100%,100%,100%);fill-opacity:1;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke:rgb(100%,100%,100%);stroke-opacity:1;stroke-miterlimit:4;" d="M 900 500 C 900 720.9375 720.9375 900 500 900 C 279.0625 900 100 720.9375 100 500 C 100 279.0625 279.0625 100 500 100 C 720.9375 100 900 279.0625 900 500 Z M 900 500 " transform="matrix(0.075,0,0,0.075,0,0)"/>
-<path style="fill-rule:nonzero;fill:rgb(100%,54.901961%,0%);fill-opacity:1;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke:rgb(100%,54.901961%,0%);stroke-opacity:1;stroke-miterlimit:4;" d="M 350 200 L 650 200 L 500 500 Z M 350 200 " transform="matrix(0.075,0,0,0.075,0,0)"/>
-<path style="fill:none;stroke-width:160;stroke-linecap:butt;stroke-linejoin:miter;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:4;" d="M 810 500 C 810 671.197917 671.197917 810 500 810 C 328.802083 810 190 671.197917 190 500 C 190 328.802083 328.802083 190 500 190 C 671.197917 190 810 328.802083 810 500 Z M 810 500 " transform="matrix(0.075,0,0,0.075,0,0)"/>
-<path style="fill:none;stroke-width:180;stroke-linecap:butt;stroke-linejoin:miter;stroke:rgb(100%,54.901961%,0%);stroke-opacity:1;stroke-miterlimit:4;" d="M 850 700 C 815.260417 763.229167 763.229167 815.260417 700 850 M 150 700 C 184.739583 763.229167 236.770833 815.260417 300 850 " transform="matrix(0.075,0,0,0.075,0,0)"/>
-</g>
-</svg>
