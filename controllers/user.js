@@ -455,7 +455,7 @@ exports.getVerifyEmail = (req, res, next) => {
     });
     const mailOptions = {
       to: req.user.email,
-      from: 'agilephoenix815.dk@gmail.com',
+      from: 'jiitodc@gmail.com',
       subject: 'Please verify your email address on JIIT Month of Code',
       text: `Thank you for registering with JIIT Month of Code.\n\n
         This verify your email address please click on the following link, or paste this into your browser:\n\n
@@ -572,7 +572,7 @@ exports.postReset = (req, res, next) => {
     });
     const mailOptions = {
       to: user.email,
-      from: 'agilephoenix815.dk@gmail.com',
+      from: 'jiitodc@gmail.com',
       subject: 'Your JIIT Month of Code password has been changed',
       text: `Hello,\n\nThis is a confirmation that the password for your account ${user.email} has just been changed.\n`
     };
@@ -686,7 +686,7 @@ exports.postForgot = (req, res, next) => {
     });
     const mailOptions = {
       to: user.email,
-      from: 'agilephoenix815.dk@gmail.com',
+      from: 'jiitodc@gmail.com',
       subject: 'Reset your password on JIIT Month of Code',
       text: `You are receiving this email because you (or someone else) have requested the reset of the password for your account.\n\n
         Please click on the following link, or paste this into your browser to complete the process:\n\n
