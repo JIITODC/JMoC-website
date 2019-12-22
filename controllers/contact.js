@@ -49,7 +49,7 @@ exports.postContact = (req, res) => {
     }
   });
   const mailOptions = {
-    to: 'JODC-EMAIL-ADDRESS',
+    to: 'jiitodc@gmail.com',
     from: `${fromName} <${fromEmail}>`,
     subject: 'JIIT Month of Code',
     text: req.body.message
