@@ -176,11 +176,6 @@ app.get('/auth/github/callback', passport.authenticate('github', {
 });
 
 /**
- * OAuth authorization routes. (API examples)
- */
-
-
-/**
  * Error Handler.
  */
 if (process.env.NODE_ENV === 'development') {
