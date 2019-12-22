@@ -158,11 +158,11 @@ app.post('/account/password', passportConfig.isAuthenticated, userController.pos
 app.post('/account/delete', passportConfig.isAuthenticated, userController.postDeleteAccount);
 app.get('/account/unlink/:provider', passportConfig.isAuthenticated, userController.getOauthUnlink);
 app.get('/about', aboutController.getAbout);
-app.get('/leaderboard', leaderboardController.getLeaderboard);
+// app.get('/leaderboard', leaderboardController.getLeaderboard);
 
-app.get('/project', projectController.getAllProjects);
-app.get('/project/new', projectController.getNewProject);
-app.post('/project/new', projectController.postNewProject);
+// app.get('/project', projectController.getAllProjects);
+// app.get('/project/new', projectController.getNewProject);
+// app.post('/project/new', projectController.postNewProject);
 
 /**
  * OAuth authentication routes. (Sign in)
