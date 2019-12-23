@@ -9,7 +9,7 @@ const userSchema = new mongoose.Schema({
   passwordResetExpires: Date,
   emailVerificationToken: String,
   emailVerified: Boolean,
-
+  mentor: Boolean,
   github: String,
 
   profile: {

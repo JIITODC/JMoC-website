@@ -12,7 +12,7 @@ block home
         use.text-copy(xlink:href='#s-text')
     h1.jumbo-head &lt; JIIT MONTH OF CODE / &gt;
     .jumbo-button
-      button.slide(onclick="window.location.href = '/signup';") MENTOR REGISTRATION  
+      button.slide(onclick="window.location.href = '/signup_mentor';") MENTOR REGISTRATION  
       button.slide(onclick="window.location.href = '/signup';") STUDENT REGISTRATION
   #box
     #about
@@ -26,8 +26,8 @@ block home
     #docs
       h1 Resources
       .box2
-        button Student Manual
-        button Mentor Manual
+        button(onclick="window.location.href = '/manual/student';") Student Manual
+        button(onclick="window.location.href = '/manual/mentor';") Mentor Manual
   .timeline
     h1 Timeline
     section#timeline
