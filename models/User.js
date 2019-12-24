@@ -11,7 +11,7 @@ const userSchema = new mongoose.Schema({
   emailVerified: Boolean,
   mentor: Boolean,
   github: String,
-
+  tokens: Array,
   profile: {
     name: String,
     gender: String,
