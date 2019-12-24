@@ -171,7 +171,7 @@ sup {
 
 a {
   color: #213d5c;
-  text-decoration: underline !important;
+  text-decoration: underline;
   background-color: transparent; }
   a:hover {
     color: #367bc5;
@@ -13335,6 +13335,7 @@ textarea {
 
 .content {
   margin-bottom: 2rem;
+  a { text-decoration: underline} ;
 }
 
 .heading {
