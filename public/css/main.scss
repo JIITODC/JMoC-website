@@ -108,7 +108,8 @@ h1, h2, h3, h4, h5, h6 {
 
 p {
   margin-top: 0;
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
+  //margin-bottom: 2rem;
   font-size: 1.2rem;
 }
 
@@ -129,7 +130,8 @@ ol,
 ul,
 dl {
   margin-top: 0;
-  margin-bottom: 1rem; }
+  margin-bottom: 1rem;
+  font-size: 1.2rem }
 
 ol ol,
 ul ul,
@@ -13329,4 +13331,12 @@ textarea {
   &:hover, &:active {
     background-color: #f1ef00;
   }
+}
+
+.content {
+  margin-bottom: 2rem;
+}
+
+.heading {
+  margin-bottom: 4rem;
 }
