@@ -108,7 +108,10 @@ h1, h2, h3, h4, h5, h6 {
 
 p {
   margin-top: 0;
-  margin-bottom: 1rem; }
+  margin-bottom: 1rem;
+  //margin-bottom: 2rem;
+  font-size: 1.2rem;
+}
 
 abbr[title],
 abbr[data-original-title] {
@@ -127,7 +130,8 @@ ol,
 ul,
 dl {
   margin-top: 0;
-  margin-bottom: 1rem; }
+  margin-bottom: 1rem;
+  font-size: 1.2rem }
 
 ol ol,
 ul ul,
@@ -167,7 +171,7 @@ sup {
 
 a {
   color: #213d5c;
-  text-decoration: none;
+  text-decoration: underline;
   background-color: transparent; }
   a:hover {
     color: #367bc5;
@@ -487,13 +491,13 @@ pre {
   margin-left: auto; }
   @media (min-width: 576px) {
     .container {
-      max-width: 540px; } }
+      max-width: 92%; } }
   @media (min-width: 768px) {
     .container {
-      max-width: 720px; } }
+      max-width: 92%; } }
   @media (min-width: 992px) {
     .container {
-      max-width: 960px; } }
+      max-width: 92%; } }
   @media (min-width: 1200px) {
     .container {
       max-width: 1140px; } }
@@ -2991,7 +2995,7 @@ input[type="button"].btn-block {
     color:black;
     background-color: snow;
     }
-    
+
 
 .navbar {
   position: relative;
@@ -3008,6 +3012,7 @@ input[type="button"].btn-block {
     justify-content: space-between; }
 
 .navbar-brand {
+  font-size: 20px;
   display: inline-block;
   padding-top: 0.3125rem;
   padding-bottom: 0.3125rem;
@@ -3334,7 +3339,7 @@ section#timeline article div.inner h2:after {
   position: absolute;
   top: 20px;
   right: -5px;
-  	width: 10px; 
+  	width: 10px;
 	  height: 10px;
   background: #8110CE;
   -webkit-transform: rotate(-45deg);
@@ -13326,4 +13331,13 @@ textarea {
   &:hover, &:active {
     background-color: #f1ef00;
   }
+}
+
+.content {
+  margin-bottom: 2rem;
+  a { text-decoration: underline} ;
+}
+
+.heading {
+  margin-bottom: 4rem;
 }

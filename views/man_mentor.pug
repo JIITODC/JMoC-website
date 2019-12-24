@@ -1,60 +1,53 @@
 extends layout
 
 block content
-    center
-    u
-        font(size='7')
-        | JIIT MONTH OF CODE
-    br
-    br
-    font(size='5' color='grey' align='right')
-        i
-        | STUDENT MANUAL
-        br
-        br
-        p
-        | IMPORTANT LINKS
-        br
-    ul(type='disk')
-        li
-        b What is JIIT Month of Code(JMOC)?
-        br
-        | &#x9;&#x9;&#x9;JIIT Month of Code is an online program by the open-source club of JIIT Noida, the JODC, focused on introducing students to open source software development and documentation writing. Students will collaborate and contribute to open-source projects under the guidance of a mentor(s) for 3 weeks during the winter. Mentors are expected to submit their projects while applying as a mentor to the program, by January 6, 2020. Selected mentors will have their projects listed on the website by January 8 and are expected to guide any student that is interested in working on an issue in their project. At the end of the program, mentors are expected to provide feedback to the students that have worked on their project&apos;s issues. All active mentors will be provided with a digital certificate and swag from the organizing team.
-        br
-        br
-        li
-        b Goal of the program
-        br
-        | &#x9;&#x9;&#x9;To introduce newcomers to open source on how to work with Git and GitHub, contribute to open-source projects, write documentation and understand the open-source culture.
-        br
-        li
-        b Eligibility
-        br
-        | &#x9;&#x9;&#x9;To become a mentor for JMoC
+
+    .heading
+      h1(align='center')  MENTOR MANUAL
+
+    .content
+        h4
+          u Important Links
+          p Register as a mentor&nbsp;
+            a(href='https://jmoc.herokuapp.com/signup_mentor') here
+          p Join our telegram group&nbsp;
+            a(href='https://t.me/jiitmoc') here
+
+    .content
+        h4
+          u What is JIIT Month of Code (JMOC)?
+        p JIIT Month of Code is an online programme by the open-source club of JIIT Noida, the JODC, focused on introducing students to open source software development and documentation writing. Students will collaborate and contribute to open-source projects under the guidance of mentor(s) for a month during the winter.
+        p Mentors are expected to submit their projects while applying as a mentor to the program, by January 1, 2020. Selected mentors will have their projects listed on the website by January 3 and are expected to guide any student that is interested in working on an issue in their project for the program's tenure.
+        p At the end of the program, mentors are expected to provide feedback to the students that have worked on their project's issues. All active mentors will be provided with a digital certificate and swag from the organising team.
+    .content
+        h4
+          u Goal of the program
+        p To introduce newcomers to open source on how to work with Git and GitHub, contribute to open-source projects, write documentation and understand open-source culture.
+    .content
+        h4
+          u Eligibility
+        p In order to become a mentor for JMoC:
         ol(type='1')
-            li You must have at least one project with merge access on GitHub.
-            li
-            | The project itself can be of any domain:
-            | web development, machine learning, blockchain, etc.
-            li
-            | Your project must have a detailed README that describes what it is about, how to set it up and how to contribute to it
-            li Your project must have at least 5 easy labeled issues
-            li Your project(s) must be approved by organizers
-            li
-            | You must have a dedicated public communication channel for each project, where studentsl may discuss and ask queries
+            li You must at least be 18 years old
+            li You must have at least one project with merge access on GitHub. The project itself can be of any domain: web development, machine learning, blockchain etc.
+            li Your project must have a detailed README that describes what it is about, how to set it up and how to contribute to it
+            li Your project must have at least 5 easy labelled issues
+            li Your project(s) must be approved by organisers
+            li You must have a dedicated public communication channel for each project, where students may discuss and ask queries
             li You must be available for at least 6 hours a week to mentor students
-        br
-        li
-        b Why should you participate?
+
+    .content
+        h4
+          u Why you should apply?
         ol(type='1')
             li To get help with your project
             li To gain publicity for your project
             li Swags!
             li For the spirit of open-source culture!
-        br
-        li
-        b Contact
-        br
-        | &#x9;&#x9;&#x9;For further details contact us at 
-        a(href='mailto:jiitodc@gmail.com') jiitodc@gmail.com
-    
+    .content
+        h4
+          u Contact
+          p Got a query? Join our&nbsp;
+            a(href='https://t.me/jiitmoc') Telegram group
+            |&nbsp;or email us at&nbsp;
+            a(href='mailto:jiitodc@gmail.com') jiitodc@gmail.com

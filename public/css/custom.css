@@ -1,6 +1,7 @@
 @import url(https://fonts.googleapis.com/css?family=Montserrat);
 .navbar{
   background: #1d1d25;
+  font-size: 20px;
 }
 
 html, body{
@@ -116,7 +117,7 @@ svg {
   flex-direction:column;
   align-items:center;
   justify-content: center;
-  margin: 2em 0 2em 0; 
+  margin: 2em 0 2em 0;
 }
 
 .slide:hover,
@@ -127,7 +128,7 @@ svg {
 /*content*/
 
 #box{
-  
+
   background-color:#2B2B40;
   display: flex;
   color:snow;
@@ -180,7 +181,7 @@ div.box2 button{
   height:100vh;
   font: 1.7em 'Montserrat';
   line-height: 1.5;
-  
+
   padding: 0;
 }
 
@@ -257,7 +258,7 @@ section#timeline article div.inner h2:after {
   position: absolute;
   top: 20px;
   right: -5px;
-  	width: 10px; 
+  	width: 10px;
 	  height: 10px;
   background: #8110CE;
   -webkit-transform: rotate(-45deg);
@@ -281,7 +282,7 @@ section#timeline article:nth-child(2n+2) div.inner h2:after {
 
 
 
-/* ================================= 
+/* =================================
   Animations
 ==================================== */
 
@@ -311,9 +312,9 @@ section#timeline article:nth-child(2n+2) div.inner h2:after {
       transform: translateY(-15px);
     }
   }
-  
 
-/* ================================= 
+
+/* =================================
   Media Queries
 ==================================== */
 
@@ -322,12 +323,12 @@ section#timeline article:nth-child(2n+2) div.inner h2:after {
 
 
 @media (min-width: 1025px) {
-  
-  
+
+
   .jumbo-button{
     flex-direction:row;
     justify-content: center;
-  margin: 5em 0 6em 0 ; 
+  margin: 5em 0 6em 0 ;
   }
 
   div.jumbo-button button {
@@ -354,25 +355,25 @@ div.timeline h1{
 
 
 @media (min-width: 769px) and (max-width: 1024px) {
-  
+
   svg{
     font: 15em 'Montserrat';
     width: 95%;
     height: 2em;
     margin: -8% auto 2px;
-    
+
   }
   section#timeline article div.inner span.circle{
     margin:0 0 0 -13px;
   }
 
-  
+
   .jumbo-head{
     font: 2em 'Montserrat';
     margin:-3%auto 10px;
   }
 
-   
+
   div.jumbo-button button{
     font: 1.2em 'Montserrat';
     margin:0.4em auto;
@@ -380,11 +381,11 @@ div.timeline h1{
     height:4em;
 }
 
-  
+
 .jumbo-button{
     flex-direction:row;
   justify-content: center;
-  margin: 7% 0; 
+  margin: 7% 0;
   }
 
 
@@ -392,7 +393,7 @@ div.timeline h1{
     font: 1.2em 'Montserrat';
       line-height: 1.2em;
       margin:0;
-      
+
       padding: 0 auto;
     }
 
@@ -402,11 +403,11 @@ div.timeline h1{
     #why{
       margin:2em 2em 0 2em;
     }
-  
+
     #docs{
       margin: 2em 2em 3em 2em;
     }
-    
+
     .box2{
       margin:2em 10%;
       display:flex;
@@ -417,43 +418,43 @@ div.timeline h1{
       div.box2 button{
       margin:2em 3em 0em 3em;
     }
-  
+
     .timeline{
       font: 1.2em 'Montserrat';
-      line-height: 1.2; 
+      line-height: 1.2;
       padding: 0;
     }
-    
+
     div.timeline h1{
       position: relative;
       margin:0em 35% 1em 42%;
       color: #fff;
       padding:1em 0 0 0;
     }
-  
+
     .arrow{
         margin:0 auto;
         height: 6em;
         width: 6em;
     }
-  
+
 }
 
 @media  (max-width: 769px) {
- 
+
   svg{
     font: 15em 'Montserrat';
     width: 95%;
     height: 2em;
     margin: -140px auto 2px;
-    
+
   }
 
   .jumbo-head{
     font: 1.8em 'Montserrat';
     margin: -100px auto 2px;
   }
-  
+
   div.jumbo-button button{
     font: 1.2em 'Montserrat';
     margin:0.5em auto;
@@ -464,7 +465,7 @@ div.timeline h1{
   font: 1em 'Montserrat';
     line-height: 1.2em;
     margin:0;
-    
+
     padding: 0 auto;
   }
 
@@ -479,7 +480,7 @@ div.timeline h1{
     margin: 2em 0em 0em 0em;
   }
 
-  
+
   #docs{
     margin: 2em 0em 3em 0em;
   }
@@ -496,11 +497,11 @@ div.timeline h1{
 
   .timeline{
     font: 1.2em 'Montserrat';
-    line-height: 1.2; 
+    line-height: 1.2;
     width: 100vw;
     padding: 0;
   }
-  
+
   div.timeline h1{
     position: relative;
     margin:0em 30% 1em 30%;
@@ -530,7 +531,7 @@ div.timeline h1{
   section#timeline article:nth-child(2n+1) div.inner h2:after {
     left: -5px;
   }
-    
+
 }
 
 @media (max-width: 481px){
@@ -539,5 +540,5 @@ div.timeline h1{
     display:flex;
     flex-direction: column;
     justify-content: space-around;
-  } 
+  }
 }
