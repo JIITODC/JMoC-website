@@ -94,6 +94,11 @@ body {
   text-align: left;
   background-color: #1d1d2d; }
 
+announcement {
+  overflow: auto;
+  font-size: 1.5vw;
+  background-color: #9e0606;
+}
 [tabindex="-1"]:focus {
   outline: 0 !important; }
 
