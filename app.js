@@ -165,7 +165,7 @@ app.get('/about', aboutController.getAbout);
 app.get('/manual/student', manualController.getStudentManual);
 app.get('/manual/mentor', manualController.getMentorManual);
 
-app.get('/project', projectController.getAllProjects);
+app.get('/project', passportConfig.isAuthenticated, projectController.getUserProject);
 app.get('/project/new', passportConfig.isAuthenticated, projectController.getNewProject);
 app.post('/project/new', passportConfig.isAuthenticated, projectController.postNewProject);
 
