@@ -146,10 +146,10 @@ app.get('/forgot', userController.getForgot);
 app.post('/forgot', userController.postForgot);
 app.get('/reset/:token', userController.getReset);
 app.post('/reset/:token', userController.postReset);
-app.get('/signup', userController.getSignup);
-app.post('/signup', userController.postSignup);
-app.get('/signup_mentor', userController.getMentor);
-app.post('/signup_mentor', userController.mentorSignup);
+// app.get('/signup', userController.getSignup);
+// app.post('/signup', userController.postSignup);
+// app.get('/signup_mentor', userController.getMentor);
+// app.post('/signup_mentor', userController.mentorSignup);
 app.get('/contact', contactController.getContact);
 app.post('/contact', contactController.postContact);
 app.get('/account/verify', passportConfig.isAuthenticated, userController.getVerifyEmail);
@@ -166,8 +166,8 @@ app.get('/manual/student', manualController.getStudentManual);
 app.get('/manual/mentor', manualController.getMentorManual);
 
 app.get('/project', passportConfig.isAuthenticated, projectController.getUserProject);
-app.get('/project/new', passportConfig.isAuthenticated, projectController.getNewProject);
-app.post('/project/new', passportConfig.isAuthenticated, projectController.postNewProject);
+// app.get('/project/new', passportConfig.isAuthenticated, projectController.getNewProject);
+// app.post('/project/new', passportConfig.isAuthenticated, projectController.postNewProject);
 
 /**
  * OAuth authentication routes. (Sign in)
