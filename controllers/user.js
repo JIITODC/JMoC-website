@@ -9,7 +9,7 @@ const validator = require('validator');
 const mailChecker = require('mailchecker');
 const User = require('../models/User');
 const winston = require('../config/winston');
-
+const jwt=require('jsonwebtoken');
 const randomBytesAsync = promisify(crypto.randomBytes);
 
 /**
@@ -58,10 +58,13 @@ exports.postLogin = (req, res, next) => {
       req.flash('errors', info);
       return res.redirect('/login');
     }
-    req.logIn(user, (err) => {
+    req.logIn(user, async (err) => {
       if (err) {
         return next(err);
       }
+      const user1=await User.findByCredentials(req.body.email,req.body.password);
+      await user1.genAuthToken();
+      
       req.flash('success', {
         msg: 'Success! You are logged in.'
       });
@@ -88,6 +91,15 @@ exports.logout = (req, res) => {
  * Signup page.
  */
 exports.getSignup = (req, res) => {
+  if (req.user) {
+    return res.redirect('/');
+  }
+  res.render('account/signup', {
+    title: 'Create Account'
+  });
+};
+
+exports.getMentor = (req, res) => {
   if (req.user) {
     return res.redirect('/');
   }
@@ -159,6 +171,65 @@ exports.postSignup = (req, res, next) => {
   });
 };
 
+exports.mentorSignup = (req, res, next) => {
+  const validationErrors = [];
+  if (!validator.isEmail(req.body.email)) {
+    validationErrors.push({
+      msg: 'Please enter a valid email address.'
+    });
+  }
+  if (!validator.isLength(req.body.password, {
+    min: 8
+  })) {
+    validationErrors.push({
+      msg: 'Password must be at least 8 characters long'
+    });
+  }
+  if (req.body.password !== req.body.confirmPassword) {
+    validationErrors.push({
+      msg: 'Passwords do not match'
+    });
+  }
+
+  if (validationErrors.length) {
+    req.flash('errors', validationErrors);
+    return res.redirect('/signup');
+  }
+  req.body.email = validator.normalizeEmail(req.body.email, {
+    gmail_remove_dots: false
+  });
+
+  const user = new User({
+    email: req.body.email,
+    mentor: true,
+    password: req.body.password
+  });
+
+  User.findOne({
+    email: req.body.email
+  }, (err, existingUser) => {
+    if (err) {
+      return next(err);
+    }
+    if (existingUser) {
+      req.flash('errors', {
+        msg: 'Account with that email address already exists.'
+      });
+      return res.redirect('/signup');
+    }
+    user.save((err) => {
+      if (err) {
+        return next(err);
+      }
+      req.logIn(user, (err) => {
+        if (err) {
+          return next(err);
+        }
+        res.redirect('/project/new');
+      });
+    });
+  });
+};
 /**
  * GET /account
  * Profile page.
@@ -455,9 +526,9 @@ exports.getVerifyEmail = (req, res, next) => {
     });
     const mailOptions = {
       to: req.user.email,
-      from: 'hackathon@starter.com',
-      subject: 'Please verify your email address on Hackathon Starter',
-      text: `Thank you for registering with hackathon-starter.\n\n
+      from: 'jiitodc@gmail.com',
+      subject: 'Please verify your email address on JIIT Month of Code',
+      text: `Thank you for registering with JIIT Month of Code.\n\n
         This verify your email address please click on the following link, or paste this into your browser:\n\n
         http://${req.headers.host}/account/verify/${token}\n\n
         \n\n
@@ -572,8 +643,8 @@ exports.postReset = (req, res, next) => {
     });
     const mailOptions = {
       to: user.email,
-      from: 'hackathon@starter.com',
-      subject: 'Your Hackathon Starter password has been changed',
+      from: 'jiitodc@gmail.com',
+      subject: 'Your JIIT Month of Code password has been changed',
       text: `Hello,\n\nThis is a confirmation that the password for your account ${user.email} has just been changed.\n`
     };
     return transporter.sendMail(mailOptions)
@@ -686,8 +757,8 @@ exports.postForgot = (req, res, next) => {
     });
     const mailOptions = {
       to: user.email,
-      from: 'hackathon@starter.com',
-      subject: 'Reset your password on Hackathon Starter',
+      from: 'jiitodc@gmail.com',
+      subject: 'Reset your password on JIIT Month of Code',
       text: `You are receiving this email because you (or someone else) have requested the reset of the password for your account.\n\n
         Please click on the following link, or paste this into your browser to complete the process:\n\n
         http://${req.headers.host}/reset/${token}\n\n

@@ -1,7 +1,7 @@
 .navbar.navbar-dark.fixed-top.navbar-expand-lg
   .container
     a.navbar-brand(href='/')
-      img(src="jmoc.png" style="height:20%;width:20%;")
+      img(src="/logo.png" style="height:20%;width:20%;")
       | &nbsp;JMOC
     button.navbar-toggler(type='button', data-toggle='collapse', data-target='.navbar-collapse')
       span.sr-only Toggle navigation
@@ -12,10 +12,8 @@
           a.nav-link(href='/') Home
         li.nav-item(class=(title === 'About') ? 'active' : undefined)
           a.nav-link(href='/about') About
-        li.nav-item(class=(title === 'Projects') ? 'active' : undefined)
-          a.nav-link(href='/project') Projects
-        li.nav-item(class=(title === 'Leaderboard') ? 'active' : undefined)
-          a.nav-link(href='/leaderboard') Leaderboard
+        //- li.nav-item(class=(title === 'Projects') ? 'active' : undefined)
+        //-   a.nav-link(href='/project') Projects
         li.nav-item(class=(title === 'Contact') ? 'active' : undefined)
           a.nav-link(href='/contact') Contact
       ul.nav.navbar-nav.ml-auto

@@ -37,7 +37,7 @@ block content
           input(type='radio', class='form-check-input' checked=user.profile.gender == 'other', name='gender', value='other', data-toggle='radio')
           label.form-check-label Other
     .form-group.row
-      label.col-md-3.col-form-label.font-weight-bold.text-right(for='location') Location
+      label.col-md-3.col-form-label.font-weight-bold.text-right(for='location') College
       .col-md-7
         input.form-control(type='text', name='location', id='location', value=user.profile.location, autocomplete)
     .form-group.row
@@ -93,3 +93,9 @@ block content
         p.mb-1: a.text-danger(href='/account/unlink/github') Unlink your GitHub account
       else
         p.mb-1: a(href='/auth/github') Link your GitHub account
+
+  .pb-2.mt-2.mb-4.border-bottom
+    h3 Add new project
+  .form-group
+    .offset-sm-3.col-md-7.pl-2
+      p.mb-1: a(href='/project/new') Click here to add a new project

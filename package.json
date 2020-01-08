@@ -34,6 +34,7 @@
     "express-session": "^1.17.0",
     "helmet": "^3.21.2",
     "jquery": "^3.4.1",
+    "jsonwebtoken": "^8.5.1",
     "lob": "^6.0.6",
     "lodash": "^4.17.15",
     "lusca": "^1.6.1",

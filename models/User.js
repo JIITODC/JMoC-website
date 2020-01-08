@@ -1,6 +1,7 @@
 const bcrypt = require('bcrypt');
 const crypto = require('crypto');
 const mongoose = require('mongoose');
+const jwt= require("jsonwebtoken");
 
 const userSchema = new mongoose.Schema({
   email: { type: String, unique: true },
@@ -9,18 +10,14 @@ const userSchema = new mongoose.Schema({
   passwordResetExpires: Date,
   emailVerificationToken: String,
   emailVerified: Boolean,
-
-  snapchat: String,
-  facebook: String,
-  twitter: String,
-  google: String,
+  mentor: Boolean,
   github: String,
-  instagram: String,
-  linkedin: String,
-  steam: String,
-  quickbooks: String,
-  tokens: Array,
-
+  tokens: [{
+    token:{
+      type:String,
+      required:true
+    }
+  }],
   profile: {
     name: String,
     gender: String,
@@ -31,6 +28,28 @@ const userSchema = new mongoose.Schema({
 },
 { timestamps: true });
 
+
+userSchema.methods.genAuthtoken=async function(){
+  const user=this;
+  const _id=user._id.toString();
+  const token =await jwt.sign({ "_id":_id },"nodejs=:)"); 
+  user.tokens.concat(token);
+  await user.save();
+  console.log(token);
+  return token;
+}
+
+userSchema.statics.findByCredentials=async function(email,password){
+  const user=await User.findOne({email});
+  if(!user){
+      return Promise.reject(new Error("email/password incorrect"));
+  }
+  const match=await bcrypt.compare(password,user.password);
+  if(!match){
+      return Promise.reject(new Error("email/password incorrect"));
+  }
+  return user;
+}
 /**
  * Password hash middleware.
  */
@@ -65,6 +84,7 @@ userSchema.methods.comparePassword = function comparePassword(candidatePassword,
 /**
  * Helper method for getting user's gravatar.
  */
+
 userSchema.methods.gravatar = function gravatar(size) {
   if (!size) {
     size = 200;

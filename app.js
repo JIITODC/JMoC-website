@@ -31,8 +31,8 @@ dotenv.config({
 const homeController = require('./controllers/home');
 const userController = require('./controllers/user');
 const aboutController = require('./controllers/about');
-const leaderboardController = require('./controllers/leaderboard');
 const contactController = require('./controllers/contact');
+const manualController = require('./controllers/manual');
 const projectController = require('./controllers/projects');
 
 /**
@@ -146,8 +146,10 @@ app.get('/forgot', userController.getForgot);
 app.post('/forgot', userController.postForgot);
 app.get('/reset/:token', userController.getReset);
 app.post('/reset/:token', userController.postReset);
-app.get('/signup', userController.getSignup);
-app.post('/signup', userController.postSignup);
+//app.get('/signup', userController.getSignup);
+//app.post('/signup', userController.postSignup);
+//app.get('/signup_mentor', userController.getMentor);
+//app.post('/signup_mentor', userController.mentorSignup);
 app.get('/contact', contactController.getContact);
 app.post('/contact', contactController.postContact);
 app.get('/account/verify', passportConfig.isAuthenticated, userController.getVerifyEmail);
@@ -158,11 +160,14 @@ app.post('/account/password', passportConfig.isAuthenticated, userController.pos
 app.post('/account/delete', passportConfig.isAuthenticated, userController.postDeleteAccount);
 app.get('/account/unlink/:provider', passportConfig.isAuthenticated, userController.getOauthUnlink);
 app.get('/about', aboutController.getAbout);
-app.get('/leaderboard', leaderboardController.getLeaderboard);
+// app.get('/leaderboard', leaderboardController.getLeaderboard);
+
+app.get('/manual/student', manualController.getStudentManual);
+app.get('/manual/mentor', manualController.getMentorManual);
 
 app.get('/project', projectController.getAllProjects);
-app.get('/project/new', projectController.getNewProject);
-app.post('/project/new', projectController.postNewProject);
+app.get('/project/new', passportConfig.isAuthenticated, projectController.getNewProject);
+app.post('/project/new', passportConfig.isAuthenticated, projectController.postNewProject);
 
 /**
  * OAuth authentication routes. (Sign in)
@@ -174,11 +179,6 @@ app.get('/auth/github/callback', passport.authenticate('github', {
 }), (req, res) => {
   res.redirect(req.session.returnTo || '/');
 });
-
-/**
- * OAuth authorization routes. (API examples)
- */
-
 
 /**
  * Error Handler.

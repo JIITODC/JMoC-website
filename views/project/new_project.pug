@@ -2,7 +2,7 @@ extends ../layout
 
 block content
   .pb-2.mt-2.mb-4.border-bottom
-    h3 Sign up
+    h3 New Project
   form(id='new-project', method='POST')
     input(type='hidden', name='_csrf', value=_csrf)
     .form-group.row
@@ -24,4 +24,4 @@ block content
     .form-group.offset-sm-3.col-md-7.pl-2
       button.btn.btn-success(type='submit')
         i.fas.fa-user-plus.fa-sm
-        | Signup
+        | Add Project

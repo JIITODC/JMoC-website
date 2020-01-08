@@ -19,12 +19,13 @@ exports.postNewProject = (req, res, next) => {
     title: req.body.title,
     description: req.body.description,
     url: req.body.url,
-    mentor: req.body.url
+    mentor: req.body.url,
+    email: req.user.email
   });
   project.save((err) => {
     if (err) {
       return next(err);
     }
-    res.redirect('/project');
+    res.redirect('/');
   });
 };

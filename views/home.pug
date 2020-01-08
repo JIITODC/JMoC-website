@@ -1,6 +1,9 @@
 extends layout
 block home
   #jmoc
+    br
+    center
+      announcement Announcement: Registrations are closed. Projects will be displayed on 9 Jan 2020. 
     svg(viewbox='0 0 960 300')
       symbol#s-text
         text(text-anchor='middle' x='50%' y='80%') &lt; JMOC / &gt;
@@ -10,58 +13,59 @@ block home
         use.text-copy(xlink:href='#s-text')
         use.text-copy(xlink:href='#s-text')
         use.text-copy(xlink:href='#s-text')
-    h1.jumbo-head &lt; JIIT MONTH OF CONTRIBUTIONS / &gt;
+    h1.jumbo-head &lt; JIIT MONTH OF CODE / &gt;
     .jumbo-button
-      button.slide MENTOR REGISTRATION
-      button.slide STUDENT REGISTRATION
+    //  button.slide(onclick="window.location.href = '/signup';") STUDENT REGISTRATION
+    //  button.slide(onclick="window.location.href = '/signup_mentor';") MENTOR REGISTRATION
   #box
     #about
-      h1 About JMOC
-      |                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-      |                  Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-      |                  Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-      |                  Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-    #why
-      h1 How it works ?
-      |                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-      |                 Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-      |                 Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-      |                 Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+      .content
+        h2 About JMOC
+        p  JIIT Month of Code is an online programme by the open-source club of Jaypee Institute of Information Technology, JIIT Noida-128, the JODC, focused on introducing students to open source software development and documentation writing. Students will collaborate and contribute to open-source projects under the guidance of mentor(s) for a month during the winter.
+      .content
+        h2 Goal of the Program
+        p  To introduce newcomers to open source on how to work with Git and GitHub, contribute to open-source projects, write documentation and understand open-source culture.
     #docs
-      h1 Resources
+      h2 Resources
       .box2
-        button Student Manual
-        button Mentor Manual
+        button(onclick="window.location.href = '/manual/student';") Student Manual
+        button(onclick="window.location.href = '/manual/mentor';") Mentor Manual
   .timeline
     h1 Timeline
     section#timeline
       article
         .inner
           span.circle
-          h2 The Title
+          h2 December 24, 2019
           p
-            | Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean quis rutrum nunc, eget dictum massa. Nam faucibus felis nec augue adipiscing, eget commodo libero mattis.
+            | Program started: Interested mentors sign up themselves and their projects/organisations on the website. Interested students begin applying to the program
       article
         .inner
           span.circle
-          h2 The Title
+          h2 January 6, 2020
           p
-            | Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean quis rutrum nunc, eget dictum massa. Nam faucibus felis nec augue adipiscing, eget commodo libero mattis.
+            | Mentor and Student registrations close: Both mentors and students are expected to complete their registrations by this date.
       article
         .inner
           span.circle
-          h2 The Title
+          h2 January 9, 2020
           p
-            | Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean quis rutrum nunc, eget dictum massa. Nam faucibus felis nec augue adipiscing, eget commodo libero mattis.
+            | Mentors and Projects Announced: Organising team selects the mentors and students for JMoC and are displayed on the website.
       article
         .inner
           span.circle
-          h2 The Title
+          h2 January 11, 2020
           p
-            | Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean quis rutrum nunc, eget dictum massa. Nam faucibus felis nec augue adipiscing, eget commodo libero mattis.
+            | Coding Period Starts: Students start contributing to the selected projects listed on the website.
       article
         .inner
           span.circle
-          h2 The Title
+          h2 February 5, 2020
           p
-            | Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean quis rutrum nunc, eget dictum massa. Nam faucibus felis nec augue adipiscing, eget commodo libero mattis.
+            | Coding Period Ends
+      article
+        .inner
+          span.circle
+          h2 February 7, 2020
+          p
+            | Results Announced: Mentors' feedback is released and results are announced.
