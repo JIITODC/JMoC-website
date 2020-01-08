@@ -166,8 +166,8 @@ app.get('/manual/student', manualController.getStudentManual);
 app.get('/manual/mentor', manualController.getMentorManual);
 
 app.get('/project', passportConfig.isAuthenticated, projectController.getUserProject);
-// app.get('/project/new', passportConfig.isAuthenticated, projectController.getNewProject);
-// app.post('/project/new', passportConfig.isAuthenticated, projectController.postNewProject);
+app.get('/project/new', passportConfig.isAuthenticated, projectController.getNewProject);
+app.post('/project/new', passportConfig.isAuthenticated, projectController.postNewProject);
 
 /**
  * OAuth authentication routes. (Sign in)
