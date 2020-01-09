@@ -29,3 +29,12 @@ exports.postNewProject = (req, res, next) => {
     res.redirect('/');
   });
 };
+
+exports.getUserProject = (req, res) => {
+  Project.find({ email: req.user.email }, (err, projects) => {
+    res.render('projects', {
+      title: 'Projects',
+      projects
+    });
+  });
+};

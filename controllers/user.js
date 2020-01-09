@@ -100,7 +100,7 @@ exports.getMentor = (req, res) => {
   if (req.user) {
     return res.redirect('/');
   }
-  res.render('account/signup', {
+  res.render('account/signup_mentor', {
     title: 'Create Account'
   });
 };
