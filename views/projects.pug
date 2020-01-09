@@ -10,4 +10,7 @@ block content
                 h2 #{project.title}
                 p #{project.description}
                 p
-                    a.btn.btn-raised(href=project.url, role='button') View details »
+                    a.btn.btn-raised(style='margin-right:16px', href=project.url, role='button') View details »
+                    
+                    a.btn.btn-raised(style='margin-right:16px', href="mailto:"+project.email, role='button') Contact »
+
