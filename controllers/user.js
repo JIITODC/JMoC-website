@@ -12,6 +12,12 @@ const winston = require('../config/winston');
 
 const randomBytesAsync = promisify(crypto.randomBytes);
 
+//Registration closed
+exports.regisClosed=(req,res)=>{
+  res.render('account/regis_closed',{
+    title:'Registration'
+  })
+}
 /**
  * GET /login
  * Login page.
