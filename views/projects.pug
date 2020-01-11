@@ -7,10 +7,15 @@ block content
     .row
         for project in projects
             .col-md-6
+            
                 h2 #{project.title}
                 p #{project.description}
                 p
-                    a.btn.btn-raised(style='margin-right:16px', href=project.url, role='button') View details »
+                    strong Mentor name:
+                    |       #{project.mentor}
+                p
+                    a.btn.btn-raised(style='margin-right:16px', href=project.url, role='button') Project URL »
                     
-                    a.btn.btn-raised(style='margin-right:16px', href="mailto:"+project.email, role='button') Contact »
+                    a.btn.btn-raised(style='margin-right:16px', href=project.chat, role='button') Chat »
+
 

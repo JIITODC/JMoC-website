@@ -5,7 +5,8 @@ const projectSchema = new mongoose.Schema({
   description: String,
   url: String,
   mentor: String,
-  email: String
+  email: String,
+  chat: String
 });
 
 const Project = mongoose.model('Project', projectSchema);
