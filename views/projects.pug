@@ -4,13 +4,12 @@ block content
     .pb-2.mt-2.mb-4.border-bottom
         h1 Projects
     hr
-    .row
-        for project in projects
-            .col-md-6
-                h2 #{project.title}
-                p #{project.description}
-                p
-                    a.btn.btn-raised(style='margin-right:16px', href=project.url, role='button') View details »
+    for project in projects
+        .row
+            h2 #{project.title}
+            p #{project.description}
+            p
+                a.btn.btn-raised(style='margin-right:16px', href=project.url, role='button') View details »
                     
-                    a.btn.btn-raised(style='margin-right:16px', href="mailto:"+project.email, role='button') Contact »
+                a.btn.btn-raised(style='margin-right:16px', href="mailto:"+project.email, role='button') Contact »
 
