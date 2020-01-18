@@ -37,6 +37,11 @@ ul {
   list-style: none;
 }
 
+.border-5 {
+  border-width:5px !important;
+  border-color: #fff !important;
+  margin-bottom: 2%;
+}
 
 h2,
 h3,
@@ -476,6 +481,11 @@ div.timeline h1{
   #about{
     margin: 2em 0em 0em 0em;
   }
+
+  div.content p{
+    line-height: 1.4em;
+  }
+
   #why{
     margin: 2em 0em 0em 0em;
   }
