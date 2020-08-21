@@ -33,7 +33,7 @@
     "express-handlebars": "^3.1.0",
     "express-session": "^1.17.0",
     "helmet": "^3.21.2",
-    "jquery": "^3.4.1",
+    "jquery": "^3.5.0",
     "lob": "^6.0.6",
     "lodash": "^4.17.15",
     "lusca": "^1.6.1",
